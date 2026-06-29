@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion'
 
-const cardVariants: Variants = {
+const cardVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -10,10 +10,12 @@ const cardVariants: Variants = {
     transition: {
       delay: i * 0.15,
       duration: 0.7,
-      ease: [0.25, 0.1, 0.25, 1] as number[],
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
-}
+} as const satisfies Record<string, unknown>
+
+
 
 const CARDS = [
   {
@@ -73,7 +75,7 @@ export default function EventSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as number[] }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
             className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white/90 uppercase leading-none mb-4"
           >
             Perché FLAT6 MEET.
@@ -82,7 +84,7 @@ export default function EventSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] as number[] }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
             className="text-white/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed"
           >
             Un evento pensato nei minimi dettagli per chi non accetta compromessi. Tre giorni di pura adrenalina motoristica.
