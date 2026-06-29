@@ -80,8 +80,8 @@ function BeatText({ beat, scrollYProgress }: { beat: NarrativeBeat; scrollYProgr
     beat.align === 'left'
       ? 'items-start text-left pl-8 md:pl-20 lg:pl-32'
       : beat.align === 'right'
-      ? 'items-end text-right pr-8 md:pr-20 lg:pr-32'
-      : 'items-center text-center'
+        ? 'items-end text-right pr-8 md:pr-20 lg:pr-32'
+        : 'items-center text-center'
 
   const handleCtaClick = () => {
     const el = document.querySelector('#iscrizione')
@@ -182,9 +182,9 @@ export default function GT3Canvas() {
       drawY = 0
     }
 
-    ctx.clearRect(0, 0, w, h)
+    ctx.clearRect(0, 0, physW, physH)
     ctx.fillStyle = '#0A0A0A'
-    ctx.fillRect(0, 0, w, h)
+    ctx.fillRect(0, 0, physW, physH)
     ctx.drawImage(img, drawX, drawY, drawW, drawH)
   }, [])
 
@@ -332,9 +332,8 @@ export default function GT3Canvas() {
               // allow pointer events through after fade
             }
           }}
-          className={`absolute inset-0 bg-[#0A0A0A] flex flex-col items-center justify-center gap-8 ${
-            !loaderVisible ? 'pointer-events-none' : ''
-          }`}
+          className={`absolute inset-0 bg-[#0A0A0A] flex flex-col items-center justify-center gap-8 ${!loaderVisible ? 'pointer-events-none' : ''
+            }`}
         >
           {/* Spinner */}
           <div className="relative w-16 h-16">
