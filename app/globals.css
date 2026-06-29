@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+@theme inline {
+  --color-bg-dark:        #0A0A0A;
+  --color-porsche-red:    #E8001D;
+  --color-silver:         #C0C0C0;
+
+  --font-sans: var(--font-inter), 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0A0A0A;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0A0A0A;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) #0A0A0A;
+}
+
+/* ─── Typography Utilities ───────────────────────────────────── */
+.font-racing {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+}
+
+/* ─── Canvas Section ─────────────────────────────────────────── */
+.canvas-section {
+  position: relative;
+  height: 400vh;
+  background: #0A0A0A;
+}
+
+.canvas-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #0A0A0A;
+}
+
+/* ─── Porsche Red Glow ───────────────────────────────────────── */
+.glow-red {
+  box-shadow: 0 0 24px rgba(232, 0, 29, 0.53);
+}
+.glow-red-border {
+  box-shadow: 0 0 32px rgba(232, 0, 29, 0.25), inset 0 0 0 1px rgba(232, 0, 29, 0.4);
+}
