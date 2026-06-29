@@ -1,8 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -10,7 +10,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.15,
       duration: 0.7,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.25, 0.1, 0.25, 1] as number[],
     },
   }),
 }
@@ -57,8 +57,8 @@ const CARDS = [
 export default function EventSection() {
   return (
     <section id="evento" className="bg-[#0A0A0A] py-28 md:py-40 px-6 md:px-10">
-      {/* Separator */}
       <div className="max-w-7xl mx-auto">
+        {/* Separator */}
         <div className="flex items-center gap-6 mb-20 md:mb-28">
           <div className="h-px flex-1 bg-[#C0C0C0]/15" />
           <span className="text-[#C0C0C0]/40 text-xs tracking-[0.4em] uppercase whitespace-nowrap">
@@ -73,7 +73,7 @@ export default function EventSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as number[] }}
             className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white/90 uppercase leading-none mb-4"
           >
             Perché FLAT6 MEET.
@@ -82,7 +82,7 @@ export default function EventSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] as number[] }}
             className="text-white/50 text-base md:text-lg max-w-xl mx-auto leading-relaxed"
           >
             Un evento pensato nei minimi dettagli per chi non accetta compromessi. Tre giorni di pura adrenalina motoristica.
